@@ -9,16 +9,34 @@ var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require("gulp-notify");
 
+var typescript = require('gulp-typescript');
+var tsconfigGlob = require('tsconfig-glob');
+var tsc = require('typescript');
+
+// expands the glob section of tsconfig.json
+// this saves our dear developer from having to explicitly type in
+// each dependency (.ts & .d.ts file)
+var tsProject = typescript.createProject('./tsconfig.json', { typescript: tsc });
+
+gulp.task('expand-tsconfig-globs', function(done) {
+    tsconfigGlob({
+      configPath: '.',
+      cwd: process.cwd(),
+      indent: 2
+    }, done);
+});
+
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
 // by errors from other gulp plugins
 // https://www.npmjs.com/package/gulp-plumber
 gulp.task('build-system', function() {
-  return gulp.src(paths.source)
-    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+  return tsProject.src()
+    .pipe(typescript(tsProject))  
+    .pipe(plumber())
     .pipe(changed(paths.output, {extension: '.js'}))
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(to5(assign({}, compilerOptions, {modules: 'system'})))
+    .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
     .pipe(sourcemaps.write({includeContent: true}))
     .pipe(gulp.dest(paths.output));
 });
@@ -44,6 +62,7 @@ gulp.task('build-css', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
+    'expand-tsconfig-globs',
     ['build-system', 'build-html', 'build-css'],
     callback
   );
