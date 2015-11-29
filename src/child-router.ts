@@ -1,5 +1,8 @@
+import {Router} from 'aurelia-router'
+
 export class ChildRouter {
   heading = 'Child Router';
+  router: Router;
 
   configureRouter(config, router) {
     config.map([

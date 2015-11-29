@@ -6,6 +6,7 @@ import 'fetch';
 export class Users {
   heading = 'Github Users';
   users = [];
+  http: HttpClient;
 
   constructor(http) {
     http.configure(config => {

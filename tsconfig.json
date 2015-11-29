@@ -38,6 +38,12 @@
     "./jspm_packages/npm/aurelia-templating-binding@1.0.0-beta.1/aurelia-templating-binding.d.ts",
     "./jspm_packages/npm/aurelia-templating-resources@1.0.0-beta.1.0.1/aurelia-templating-resources.d.ts",
     "./jspm_packages/npm/aurelia-templating-router@1.0.0-beta.1.0.1/aurelia-templating-router.d.ts",
-    "./jspm_packages/npm/aurelia-templating@1.0.0-beta.1/aurelia-templating.d.ts"
+    "./jspm_packages/npm/aurelia-templating@1.0.0-beta.1/aurelia-templating.d.ts",
+    "./src/app.ts",
+    "./src/blur-image.ts",
+    "./src/child-router.ts",
+    "./src/main.ts",
+    "./src/users.ts",
+    "./src/welcome.ts"
   ]
 }
