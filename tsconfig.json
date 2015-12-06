@@ -4,7 +4,9 @@
     "target": "es6",
     "module": "system",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "rootDir": "src/",
+    "sourceMap": true
   },
   "filesGlob": [
     "./src/**/*.ts",
