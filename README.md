@@ -37,6 +37,13 @@ To run the app, follow these steps.
   jspm install -y
   ```
   >**Note:** Windows users, if you experience an error of "unknown command unzip" you can solve this problem by doing `npm install -g unzip` and then re-running `jspm install`.
+  
+6. install and run vscode: https://code.visualstudio.com/
+
+7. open the folder
+
+8. build the project (should generate .js files in `dist` folder
+
 6. To run the app, execute the following command:
 
   ```shell
