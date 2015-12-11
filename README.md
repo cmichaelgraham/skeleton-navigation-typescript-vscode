@@ -40,9 +40,11 @@ To run the app, follow these steps.
   
 6. install and run vscode: https://code.visualstudio.com/
 
-7. open the folder
+7. open the folder where you cloned the [skeleton-navigation-typescript-vscode](https://github.com/cmichaelgraham/skeleton-navigation-typescript-vscode) repository
 
-8. build the project (should generate .js files in `dist` folder
+8. Build the project (should generate .js files in `dist` folder
+
+  > From the vscode editor run the build task (type `ctrl` `shift` `b` to initiate a build).
 
 6. To run the app, execute the following command:
 
