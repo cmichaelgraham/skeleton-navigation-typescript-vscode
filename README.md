@@ -3,7 +3,7 @@
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
 [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-This skeleton is part of the [Aurelia](http://www.aurelia.io/) platform. It sets up a standard navigation-style app using gulp to build your ES6 code with the Babel compiler. Karma/Protractor/Jasmine testing is also configured.
+This skeleton is part of the [Aurelia](http://www.aurelia.io/) platform. It sets up a standard navigation-style app using gulp to build your TypeScript code. Karma/Protractor/Jasmine testing is also configured.
 
 > To keep up to date on [Aurelia](http://www.aurelia.io/), please visit and subscribe to [the official blog](http://blog.durandal.io/). If you have questions, we invite you to [join us on Gitter](https://gitter.im/aurelia/discuss). If you would like to have deeper insight into our development process, please install the [ZenHub](https://zenhub.io) Chrome Extension and visit any of our repository's boards. You can get an overview of all Aurelia work by visiting [the framework board](https://github.com/aurelia/framework#boards).
 
@@ -54,6 +54,12 @@ To run the app, follow these steps.
 7. Browse to [http://localhost:9000](http://localhost:9000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files.
 
 > The Skeleton App uses [BrowserSync](http://www.browsersync.io/) for automated page refreshes on code/markup changes concurrently accross multiple browsers. If you prefer to disable the mirroring feature set the [ghostMode option](http://www.browsersync.io/docs/options/#option-ghostMode) to false
+
+## Notes on the TypeScript build
+
+If you closely inspect the build, you will see that the TypeScript compiler is targeting ES6, which is then fed through the babel transpiler.  This allows you take advantage of the TypeScript (> 1.7.3) [async / await](http://tc39.github.io/ecmascript-asyncawait/) pattern.
+
+See the [TypeScript Roadmap](https://github.com/Microsoft/TypeScript/wiki/Roadmap#17)
 
 ## Running The App under Electron
 
