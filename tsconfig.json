@@ -2,7 +2,6 @@
   "version": "1.6.2",
   "compilerOptions": {
     "target": "es6",
-    "module": "system",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "rootDir": "src/",
